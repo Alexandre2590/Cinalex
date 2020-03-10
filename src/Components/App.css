@@ -1,0 +1,13 @@
+.logohome{
+
+}
+.inalex{
+    padding-top: 20px;
+    margin-right: 3%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
