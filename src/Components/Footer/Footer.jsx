@@ -3,12 +3,12 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer class="footer">
-        <div class="content has-text-centered">
+      <footer className="footer">
+        <div className="content has-text-centered">
           <p>
             <strong>Cinalex portage salarial</strong>
            {" "}
-            <a href="">
+            <a href="/">
               contact
             </a>
           </p>

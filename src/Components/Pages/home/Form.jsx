@@ -3,26 +3,27 @@ import { useForm } from "react-hook-form";
 
 const Form = () => {
   const { handleSubmit, register, errors } = useForm();
+
   const onSubmit = values => {
     console.log(values);
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} >
         <br />
+        {/* champ Nom prénom */}
         <div className="field">
+          {" "}
           <label className="label"></label>
           <div className="control has-icons-left has-icons-right">
             <input
-              name="username"
-              ref={register({
-                validate: value => value !== "admin" || "Nice try!"
-              })}
-              className="input is-success"
+              name="name"
+              ref={register({ required: true })}
+              className={`input ${errors.name && "is-danger"}`}
               type="text"
               placeholder="          Nom prénom"
-            />
+              />
             <span className="icon is-small is-left">
               <i className="fas fa-user"></i>
             </span>
@@ -32,40 +33,34 @@ const Form = () => {
           </div>
         </div>
 
+        {/* secteur d'activité*/}
         <div className="field">
+          {" "}
           <label className="label"></label>
           <div className="control">
             <input
-              name="Job"
-              ref={register({
-                validate: value => value !== ""
-              })}
-              className="input"
+              name="job"
+              ref={register({ required: true })}
+              className={`input ${errors.job && "is-danger"}`}
               type="text"
               placeholder="               Secteur d'activité"
             />
           </div>
         </div>
 
+        {/* Email input*/}
         <div className="field">
+          {" "}
           <label className="label"></label>
           <div className="control has-icons-left has-icons-right">
             <input
-              name="email"
+              name="Email"
               ref={register({
-                required: "Required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "invalid email address"
-                }
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
               })}
-            />
-            {errors.email && errors.email.message}
-
-            <input
-              className="input is-danger"
-              type="email"
-              placeholder="            Email input"
+              className={`input ${errors.Email && "is-danger"}`}
+              placeholder="                E-mail"
             />
             <span className="icon is-small is-left">
               <i className="fas fa-envelope"></i>
@@ -74,52 +69,48 @@ const Form = () => {
               <i className="fas fa-exclamation-triangle"></i>
             </span>
           </div>
-          <p className="help is-danger">This email is invalid</p>
         </div>
 
+        {/* Numéro de tel  */}
         <div className="field">
+          {" "}
           <label className="label"></label>
           <div className="control">
             <input
+              name="Number"
+              ref={register({
+                required:false,
+                validate: value => value  === Number || value.length === 10 || value === "" ,
+              })}
               className="input"
-              type="text"
               placeholder="          Numéro de téléphone"
             />
           </div>
         </div>
 
+        {/* Message     */}
         <div className="field">
+          {" "}
           <label className="label">Message</label>
           <div className="control">
-            <textarea className="textarea" placeholder="Textarea"></textarea>
+            <textarea
+              name="Message"
+              ref={register({
+                validate: value => value.length > 2 || value ==="",
+              })}
+              className="textarea"
+              placeholder="Textarea"
+            ></textarea>
           </div>
         </div>
 
-        <div className="field">
-          <div className="control">
-            <label className="checkbox">
-              Je suis d'accord d'être contacté:{" "}
-            </label>
-          </div>
-        </div>
+        {errors.name || errors.job ||errors.name ? <><div className="has-text-danger">Veuillez remplir tous les champs</div><br/></> : <p></p>}
 
-        <div className="field">
-          <div className="control">
-            <label className="radio">
-              <input type="radio" name="question" /> Yes
-            </label>
-            <label className="radio">
-              <input type="radio" name="question" /> No
-            </label>
-          </div>
-        </div>
-
+        {/* Bouttons soumettre  */}
         <div className="field is-grouped">
+          {" "}
           <div className="control">
-            <button className="button is-link">Submit</button>
-          </div>
-          <div className="control">
-            <button className="button is-link is-light">Cancel</button>
+            <button className="soumettre button is-link">Soumettre</button>
           </div>
         </div>
       </form>

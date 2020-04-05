@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
 
 
@@ -13,6 +13,7 @@ const MainNavbar = () => {
             <img
             className="is-3by1"
               src={Logo}
+              alt="logo"
             />
           </div>
           
