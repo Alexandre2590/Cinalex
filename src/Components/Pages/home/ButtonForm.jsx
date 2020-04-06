@@ -14,7 +14,7 @@ function WarningBanner(props) {
 }
 
 class ButtonForm extends Component {
-  state = { showWarning: true };
+  state = { showWarning: false };
 
   handleToggleClick = () => {
     this.setState(prevState => ({

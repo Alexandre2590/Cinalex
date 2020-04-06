@@ -1,18 +1,17 @@
-import React from 'react';
-import './App.css';
-import { Route, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router'
-import Home from "./Pages/Home"
-import MainNavbar from "./Header/MainNavbar"
-import Footer from "../Components/Footer/Footer"
-import Test from "./Pages/Test"
-
+import React from "react";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
+import Home from "./Pages/Home";
+import MainNavbar from "./Header/MainNavbar";
+import Footer from "../Components/Footer/Footer";
+import Test from "./Pages/Test";
 
 function App() {
   return (
     <div className="App">
-      <MainNavbar/>
-     <Switch>
+      <MainNavbar />
+      <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/test" component={Test} />
 
@@ -23,8 +22,7 @@ function App() {
         <Route path="/secret" component={Secret} /> */}
         <Route render={() => <h2>404</h2>} />
       </Switch>
-      <Footer/>
-     
+      <Footer />
     </div>
   );
 }

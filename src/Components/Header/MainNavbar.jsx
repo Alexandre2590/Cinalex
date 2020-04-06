@@ -2,21 +2,15 @@ import React from "react";
 // import { Link, NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
 
-
-
 const MainNavbar = () => {
   return (
     <div>
       <div className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <div className="navbar-item" href="https://bulma.io">
-            <img
-            className="is-3by1"
-              src={Logo}
-              alt="logo"
-            />
+            <img className="is-3by1" src={Logo} alt="logo" />
           </div>
-          
+
           <div
             role="button"
             className="navbar-burger burger"
@@ -31,24 +25,23 @@ const MainNavbar = () => {
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <div className="navbar-item">Home</div>
+            <div className="navbar-item">Acceuil</div>
 
             <div className="navbar-item">Documentation</div>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <div className="navbar-link">More</div>
+              <div className="navbar-link">Plus</div>
 
               <div className="navbar-dropdown">
-                <div className="navbar-item">About</div>
-                <div className="navbar-item">Jobs</div>
-                <div className="navbar-item">Contact</div>
+                <div className="navbar-item">A propos de nous</div>
+                <div className="navbar-item">Un truc a rajouter ???</div>
                 <hr className="navbar-divider" />
-                <div className="navbar-item">Report an issue</div>
+                <div className="navbar-item">Cindy fait pas la maline</div>
               </div>
             </div>
           </div>
 
-          <div className="navbar-end">
+          {/* <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
                 <div className="button is-primary">
@@ -57,7 +50,7 @@ const MainNavbar = () => {
                 <div className="button is-light">Log in</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
