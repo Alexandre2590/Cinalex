@@ -1,37 +1,45 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Test = () => {
-  const { handleSubmit, register, errors } = useForm();
-  const onSubmit = values => {
-    console.log(values);
+export default function Test() {
+  const { register, handleSubmit, formState } = useForm({
+    mode: "onChange",
+  });
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
   };
+
+  console.log(JSON.stringify(formState.dirtyFields));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        name="email"
-        ref={register({
-          required: 'Required',
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            message: "invalid email address"
-          }
-        })}
-      />
-      {errors.email && errors.email.message}
+      <label>First name</label>
+      <input type="text" name="First name" ref={register({ required: true })} />
 
-      <input
-        name="username"
-        ref={register({
-          validate: value => value !== "admin" || "Nice try!"
-        })}
-      />
-      {errors.username && errors.username.message}
+      <label>Last name</label>
+      <input type="text" name="Last name" ref={register} />
 
-      <button type="submit">Submit</button>
+      <label>Email</label>
+      <input type="text" name="Email" ref={register} />
+
+      <label>Mobile number</label>
+      <input type="tel" name="Mobile number" ref={register} />
+
+      <label>Title</label>
+      <select name="Title" ref={register}>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Miss">Miss</option>
+        <option value="Dr">Dr</option>
+      </select>
+
+      <label>Are you a developer?</label>
+      <input name="developer" type="radio" value="Yes" ref={register} />
+      <input name="developer" type="radio" value="No" ref={register} />
+
+      <pre>{JSON.stringify(formState, null, 2)}</pre>
+
+      <input type="submit" />
     </form>
   );
-};
-
-export default Test;
+}

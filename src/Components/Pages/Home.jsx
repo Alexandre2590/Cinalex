@@ -1,7 +1,7 @@
 import React from "react";
-// import Picture from "../../Images/PictureHome.jpg";
 import Logo from "../../Images/logo.png";
-import ButtonForm from "./home/ButtonForm"
+import ButtonForm from "./home/ButtonForm";
+
 
 const Home = () => {
   return (
@@ -11,7 +11,9 @@ const Home = () => {
           <img src={Logo} className="logohome image is-96x96" alt="logohome" />
           <h1 className="inalex title is-1">CINALEX</h1>
         </div>
-
+{/* simulateur
+gros avantages du portage slariale
++ photo Cindy pour le contacter nous */}
         <br />
       </div>
       <h1 className="title has-text-centered">Portage salarial</h1>

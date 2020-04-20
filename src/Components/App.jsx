@@ -6,6 +6,12 @@ import Home from "./Pages/Home";
 import MainNavbar from "./Header/MainNavbar";
 import Footer from "../Components/Footer/Footer";
 import Test from "./Pages/Test";
+import Test2 from "./Pages/Test2";
+import Test3 from "./Pages/Test3";
+import Documentation from "./Pages/Documentation/Documentation"
+
+
+
 
 function App() {
   return (
@@ -13,7 +19,12 @@ function App() {
       <MainNavbar />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/documentation" exact component={Documentation} />
         <Route path="/test" component={Test} />
+        <Route path="/test2" component={Test2} />
+        <Route path="/test3" component={Test3} />
+
+
 
         {/* <Route path="/countries" component={Countries} />
         <Route path="/add-country" component={AddCountry} />

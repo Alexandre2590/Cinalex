@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
+  
   const { handleSubmit, register, errors } = useForm();
+  
+  const [state, setState] = useState();
 
-  const onSubmit = values => {
-    console.log(values);
+  console.log(state)
+
+  const onSubmit = (data, e) => {
+    setState({state : data})
+    //console.log(data);
+    e.target.reset(); // reset after form submit
+  };
+
+  const validationMessage = () => {
+    console.log("hello");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} >
+      <form onSubmit={handleSubmit(onSubmit)}>
         <br />
         {/* champ Nom prénom */}
         <div className="field">
@@ -23,7 +34,7 @@ const Form = () => {
               className={`input ${errors.name && "is-danger"}`}
               type="text"
               placeholder="          Nom prénom"
-              />
+            />
             <span className="icon is-small is-left">
               <i className="fas fa-user"></i>
             </span>
@@ -79,8 +90,9 @@ const Form = () => {
             <input
               name="Number"
               ref={register({
-                required:false,
-                validate: value => value  === Number || value.length === 10 || value === "" ,
+                required: false,
+                validate: (value) =>
+                  value === Number || value.length === 10 || value === "",
               })}
               className="input"
               placeholder="          Numéro de téléphone"
@@ -96,7 +108,7 @@ const Form = () => {
             <textarea
               name="Message"
               ref={register({
-                validate: value => value.length > 2 || value ==="",
+                validate: (value) => value.length > 2 || value === "",
               })}
               className="textarea"
               placeholder="Textarea"
@@ -104,13 +116,26 @@ const Form = () => {
           </div>
         </div>
 
-        {errors.name || errors.job ||errors.name ? <><div className="has-text-danger">Veuillez remplir tous les champs</div><br/></> : <p></p>}
-
+        {errors.name || errors.job || errors.name ? (
+          <>
+            <div className="has-text-danger">
+              Veuillez remplir tous les champs
+            </div>
+            <br />
+          </>
+        ) : (
+          <p></p>
+        )}
         {/* Bouttons soumettre  */}
         <div className="field is-grouped">
           {" "}
           <div className="control">
-            <button className="soumettre button is-link">Soumettre</button>
+            <button
+              className="soumettre button is-link"
+              onClick={validationMessage}
+            >
+              Soumettre
+            </button>
           </div>
         </div>
       </form>

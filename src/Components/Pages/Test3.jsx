@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-export default function Test2() {
+const Test3 = () => {
   const [state, setState] = useState();
 
   const { handleSubmit, register, errors } = useForm();
@@ -73,3 +73,4 @@ export default function Test2() {
   );
 };
 
+export default Test3;

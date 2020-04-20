@@ -1,14 +1,19 @@
 import React from "react";
 // import { Link, NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
+import { Link, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router'
+
 
 const MainNavbar = () => {
   return (
     <div>
-      <div className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <div className="navbar-item" href="https://bulma.io">
-            <img className="is-3by1" src={Logo} alt="logo" />
+            <Link to="/">
+             <img className="is-3by1" src={Logo} alt="logo" />
+            </Link>
           </div>
 
           <div
@@ -25,9 +30,10 @@ const MainNavbar = () => {
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <div className="navbar-item">Acceuil</div>
-
-            <div className="navbar-item">Documentation</div>
+            <NavLink className="navbar-item" to="/" exact>Accueil</NavLink>
+            <div className="navbar-item">
+            <NavLink to="/documentation">Documentation</NavLink>
+            </div>
 
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link">Plus</div>
@@ -40,21 +46,10 @@ const MainNavbar = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <div className="button is-primary">
-                  <strong>Sign up</strong>
-                </div>
-                <div className="button is-light">Log in</div>
-              </div>
-            </div>
-          </div> */}
         </div>
-      </div>
+      </nav>
     </div>
   );
 };
 
-export default MainNavbar;
+export default withRouter(MainNavbar)
