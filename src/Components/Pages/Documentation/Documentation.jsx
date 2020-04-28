@@ -10,13 +10,13 @@ const Documentation = () => {
   return (
     <div>
       <div className="has-text-centered">
-        <h1 class="title is-3">Portage salarial</h1>
+        <h1 className="title is-3">Portage salarial</h1>
       </div>
       <br />
       <br />
 
       <div className="has-text-centered">
-        <h3 class="subtitle is-3">C'est quoi ?</h3>
+        <h3 className="subtitle is-3">C'est quoi ?</h3>
       </div>
       <br />
       <br />
@@ -44,7 +44,7 @@ const Documentation = () => {
       <br />
 
       <div className="has-text-centered">
-        <h3 class="subtitle is-3"> Pour qui ?</h3>
+        <h3 className="subtitle is-3"> Pour qui ?</h3>
       </div>
       <br />
       <br />
@@ -60,13 +60,13 @@ const Documentation = () => {
         <br />
       </article>
       <div className="has-text-centered">
-        <h3 class="subtitle is-3"> Avantages ?</h3>
+        <h3 className="subtitle is-3"> Avantages ?</h3>
       </div>
       <br />
       <br />
 
       <article className="container is-fluid">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th>
@@ -127,7 +127,7 @@ const Documentation = () => {
                 La société de portage salarial propose différentes solutions,
                 notamment des aides dans différents domaines comme la mise en
                 place de conseils de spécialistes, experts comptables, avocats,
-                ect..
+                etc..
               </td>
             </tr>
             <tr>

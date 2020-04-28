@@ -9,6 +9,7 @@ import Test from "./Pages/Test";
 import Test2 from "./Pages/Test2";
 import Test3 from "./Pages/Test3";
 import Documentation from "./Pages/Documentation/Documentation"
+import Simulateur from "./Pages/Simulateur/Simulateur"
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/documentation" exact component={Documentation} />
+        <Route path="/simulateur" component={Simulateur} />
         <Route path="/test" component={Test} />
         <Route path="/test2" component={Test2} />
         <Route path="/test3" component={Test3} />

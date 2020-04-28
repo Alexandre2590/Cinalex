@@ -40,9 +40,9 @@ const MainNavbar = () => {
 
               <div className="navbar-dropdown">
                 <div className="navbar-item">A propos de nous</div>
-                <div className="navbar-item">Un truc a rajouter ???</div>
+                <div className="navbar-item">Simulateur</div>
                 <hr className="navbar-divider" />
-                <div className="navbar-item">Cindy fait pas la maline</div>
+                <div className="navbar-item">Pourquoi nous choisir ?</div>
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import Logo from "../../Images/logo.png";
 import ButtonForm from "./home/ButtonForm";
-
+import Cindy from "../../Images/cindy.png";
 
 const Home = () => {
+ 
+
   return (
     <div>
       <div className="has-text-centered">
@@ -11,7 +13,7 @@ const Home = () => {
           <img src={Logo} className="logohome image is-96x96" alt="logohome" />
           <h1 className="inalex title is-1">CINALEX</h1>
         </div>
-{/* simulateur
+        {/* simulateur
 gros avantages du portage slariale
 + photo Cindy pour le contacter nous */}
         <br />
@@ -21,9 +23,36 @@ gros avantages du portage slariale
       <h2 className="subtitle has-text-centered	">
         Concentrez-vous sur votre coeur d'activité on s'occupe du reste.{" "}
       </h2>
+      <br/>
+      {/* image/icone CINDY */}
+      <div className="columns">
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column is-narrow">
+          <div className="">
+            <div className="image is-96x96">
+              <img className="is-rounded" src={Cindy} alt=""  />
+            </div>
+          </div>
+        </div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+      </div>
+      <div className="has-text-centered">Cindy Mamou  expert-comptable</div>
+      <br/>
+
       <div className="has-text-centered">
-      <ButtonForm/>
-      </div><br />
+        <ButtonForm />
+      </div>
+      <br />
       <br />
     </div>
   );
