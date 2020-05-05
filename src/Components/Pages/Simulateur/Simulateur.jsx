@@ -4,8 +4,6 @@ import FormSimulateur from "./Components/FormSimulateur";
 const Simulateur = () => {
   const [state, setState] = useState("1");
 
-  console.log(state);
-
   const handleChange = (e) => {
     setState(e.target.value);
   };
@@ -15,6 +13,7 @@ const Simulateur = () => {
       <div className="columns">
         <div className="column"></div>
         <div className="box is-two-fifths">
+          <br/>
           <h1 className="title is-4">Simulateur de portage salarial</h1>
           <div className="container"></div>
           Je facture ma mission au temps passé par :{" "}

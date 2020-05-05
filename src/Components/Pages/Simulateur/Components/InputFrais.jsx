@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-const InputFrais = () => {
+const InputFrais = (props) => {
   const [frais, setFrais] = useState("");
-
-  const handleChange = (e) => {
-    setFrais(e.target.value);
-  };
 
   const divStyle = {
     width: "70px",
   };
+
+  const HandleSubmit  =  (e) => {
+   props.onChange(e.target.value)
+   setFrais(e.target.value)
+  }
 
   return (
     <>
@@ -22,7 +23,7 @@ const InputFrais = () => {
             type="number"
             //placeholder="frais"
             value={frais}
-            onChange={handleChange}
+            onChange={HandleSubmit}
             style={divStyle}
           />{" "}
           <div className="is-inline-flex"> euros de frais professionnels</div>

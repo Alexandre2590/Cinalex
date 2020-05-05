@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-const InputForfait = () => {
+const InputForfait = (props) => {
   const [forfait, setForfait] = useState("");
 
   const handleChange = (e) => {
     setForfait(e.target.value);
+    props.inputForfait(e.target.value);
+
   };
    
   const divStyle = {
-    width: "70px",
+    width: "85px",
   };
 
   return (
@@ -20,11 +22,10 @@ const InputForfait = () => {
             <input
               className="input is-primary is-small is-rounded "
               type="number"
-              //placeholder="Nombre de jours/mois "
               value={forfait}
               onChange={handleChange}
               style={divStyle}
-            /> <>{" "}</> {" "} jours / mois,
+            /> <>{" "}</> {" "} euros HT / mois,
           </div>
         </div>
         <br />

@@ -1,31 +1,25 @@
 import React, { useState } from "react";
 
-const InputDays = () => {
+const InputDays = (props) => {
   const [day, setDay] = useState("");
   const [price, setPrice] = useState("");
 
   const handleDay = (e) => {
     let val = e.target.value;
-
-    if (val <= 31 && val>0) {
-      return setDay(e.target.value);
+    if (val <= 31 && val > 0) {
+      setDay(e.target.value);
+      props.inputDayChange(e.target.value);
     }
   };
 
   const handleChange = (e) => {
     setPrice(e.target.value);
+    props.inputDayChangeTwo(e.target.value);
   };
-  
-  console.log(day);
-  console.log(price);
 
   const divStyle = {
     width: "70px",
   };
-
-//   const sendData = (props) => {
-//     props.parentCallback(day);
-// }
 
   return (
     <>
@@ -34,9 +28,9 @@ const InputDays = () => {
         <div className="field is-inline-flex">
           <div className="control ">
             <input
+              name="price"
               className="input is-primary is-small is-rounded "
               type="number"
-              //placeholder="Nombre de jours/mois "
               value={day}
               onChange={handleDay}
               style={divStyle}
@@ -53,7 +47,6 @@ const InputDays = () => {
             name="price"
             className="input is-primary is-small is-rounded"
             type="number"
-            //placeholder="Facturation HT / jours  "
             value={price}
             onChange={handleChange}
             style={divStyle}
